@@ -19,8 +19,6 @@ public class UniqueUsernames {
             usernames.add(currentUsername);
 
         }
-        for (String user : usernames) {
-            System.out.println(user);
-        }
+        usernames.forEach(System.out::println);
     }
 }
