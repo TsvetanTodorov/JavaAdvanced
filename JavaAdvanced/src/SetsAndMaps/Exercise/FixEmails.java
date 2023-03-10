@@ -14,19 +14,14 @@ public class FixEmails {
         while (!name.equals("stop")) {
 
             String email = scanner.nextLine();
-            String[] emailArr = email.split("\\.");
-            String domain = emailArr[emailArr.length - 1];
 
-            if (!domain.equals("uk") && !domain.equals("us") && !domain.equals("com")) {
+            if (!email.endsWith("uk") && !email.endsWith("us") && !email.endsWith("com")) {
                 emails.put(name, email);
             }
 
             name = scanner.nextLine();
         }
 
-        for (String currName : emails.keySet()) {
-            System.out.printf("%s -> %s\n", currName, emails.get(currName));
-
-        }
+        emails.entrySet().forEach(entry -> System.out.println(entry.getKey() + " -> " + entry.getValue()));
     }
 }
