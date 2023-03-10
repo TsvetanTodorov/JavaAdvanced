@@ -18,8 +18,6 @@ public class PeriodicTable {
             chemicals.addAll(elements);
         }
 
-        for (String ele : chemicals) {
-            System.out.print(ele + " ");
-        }
+        chemicals.forEach(e -> System.out.print(e + " "));
     }
 }
