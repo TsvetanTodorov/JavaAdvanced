@@ -12,7 +12,7 @@ public class ReadFile {
         Scanner scanner = new Scanner(System.in);
 
 
-        String filePath = "/Users/tsvetantodorov/Downloads/04. Java-Advanced-Files-and-Streams-Lab-Resources/input.txt";
+        String filePath = "/Users/tsvetantodorov/Downloads/04-2/input.txt";
 
         try (InputStream inputStream = new FileInputStream(filePath)) {
             int readByte = inputStream.read();
