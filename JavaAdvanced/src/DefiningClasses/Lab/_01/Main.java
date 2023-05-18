@@ -12,10 +12,16 @@ public class Main {
 
         for (int i = 0; i < n; i++) {
             String[] carParts = scanner.nextLine().split(" ");
-            Car car = new Car();
-            car.setBrand(carParts[0]);
-            car.setModel(carParts[1]);
-            car.setHorsepower(Integer.parseInt(carParts[2]));
+
+            Car car;
+            if (carParts.length > 1) {
+                int hp = Integer.parseInt(carParts[2]);
+                car = new Car(carParts[0], carParts[1], hp);
+            } else {
+                car = new Car(carParts[0]);
+            }
+
+
 
             System.out.println(car.carInfo());
         }

@@ -1,11 +1,24 @@
 package DefiningClasses.Lab._01;
 
+import java.sql.Array;
+
 public class Car {
 
     private String brand;
     private String model;
     private int horsepower;
 
+
+    public Car(String brand, String model, int horsepower) {
+        this.brand = brand;
+        this.model = model;
+        this.horsepower = horsepower;
+
+    }
+
+    public Car(String brand) {
+        this(brand, "unknown", -1);
+    }
 
     public String getBrand() {
         return brand;
@@ -44,7 +57,7 @@ public class Car {
     }
 
 
-    public String carInfo(){
+    public String carInfo() {
         return this.toString();
     }
 
