@@ -4,29 +4,37 @@ public class Car {
 
     private String model;
     private double fuelAmount;
-    private double consumptionFuelPerKm;
-    private int distanceTraveled;
+    private double fuelConsumptionPerKm;
+    private int distanceTraveled = 0;
 
 
-    public Car(String model, double fuelAmount, double priceFuelPerKm) {
+    public Car(String model, double fuelAmount, double fuelConsumptionPerKm) {
         this.model = model;
         this.fuelAmount = fuelAmount;
-        this.consumptionFuelPerKm = priceFuelPerKm;
-        this.distanceTraveled = 0;
+        this.fuelConsumptionPerKm = fuelConsumptionPerKm;
     }
 
-    public boolean drive(int kmToDrive) {
-        double needFUel = kmToDrive * this.consumptionFuelPerKm;
-        if (needFUel <= this.fuelAmount) {
-            this.fuelAmount -= needFUel;
-            this.distanceTraveled += kmToDrive;
-            return true;
-        }
-        return false;
+    public String getModel() {
+        return model;
     }
 
-    @Override
-    public String toString() {
-        return String.format("%s %.2f %d", this.model, this.fuelAmount, this.distanceTraveled);
+    public void drive(int kmToDrive) {
+        fuelAmount -= calculateNeededFuel(kmToDrive);
+        distanceTraveled += kmToDrive;
+    }
+
+    public boolean hasEnoughFuel(int kmToDrive) {
+        return calculateNeededFuel(kmToDrive) <= fuelAmount;
+    }
+
+
+    public void printInfo(){
+        System.out.printf("%s %.2f %d\n", model, fuelAmount, distanceTraveled);
+    }
+
+
+
+    private double calculateNeededFuel(int kmToDrive) {
+        return kmToDrive * fuelConsumptionPerKm;
     }
 }
