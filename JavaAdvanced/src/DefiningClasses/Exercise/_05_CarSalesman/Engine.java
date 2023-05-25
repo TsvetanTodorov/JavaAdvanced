@@ -1,7 +1,6 @@
 package DefiningClasses.Exercise._05_CarSalesman;
 
 public class Engine {
-
     private String model;
     private int power;
     private int displacement;
@@ -30,4 +29,13 @@ public class Engine {
     public String getEfficiency() {
         return efficiency;
     }
+
+    public boolean isDisplacementEqualsZero() {
+        return displacement == 0;
+    }
+
+    public boolean isEfficiencyEqualsNull(){
+        return efficiency == null;
+    }
+
 }

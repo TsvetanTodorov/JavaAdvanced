@@ -1,7 +1,5 @@
 package DefiningClasses.Exercise._05_CarSalesman;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -9,7 +7,8 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
 
-        List<Engine> engines = new ArrayList<>();
+        Engines engines = new Engines();
+
         int enginesCount = Integer.parseInt(scanner.nextLine());
 
         for (int i = 0; i < enginesCount; i++) {
@@ -32,7 +31,7 @@ public class Main {
             }
 
             Engine engine = new Engine(model, power, displacement, efficiency);
-            engines.add(engine);
+            engines.addEngine(engine);
         }
 
         int carsCount = Integer.parseInt(scanner.nextLine());
@@ -55,16 +54,15 @@ public class Main {
                 }
             }
 
-            Engine carEngine = null;
-            for (Engine engine : engines) {
-                if (engineModel.equals(engine.getModel())) {
-                    carEngine = engine;
-
-                }
+            Engine carEngine = engines.getEngineByModel(engineModel);
+            if (carEngine == null) {
+                System.out.println("Sorry! We didn't find an engine with model: " + engineModel);
+                continue;
             }
 
+
             Car car = new Car(carModel, carEngine, weight, color);
-            System.out.println(car.toString());
+            car.printInfo();
         }
     }
 }
