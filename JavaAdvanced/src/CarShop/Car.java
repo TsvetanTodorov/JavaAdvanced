@@ -1,4 +1,4 @@
-package OOP.Interfaces.Lab.CarShop;
+package CarShop;
 
 import java.io.Serializable;
 
@@ -8,6 +8,6 @@ public interface Car extends Serializable {
 
     String getModel();
     String getColor();
-    int getHorsePower();
+    Integer getHorsePower();
     String countryProduced();
 }

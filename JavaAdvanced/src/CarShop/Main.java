@@ -1,4 +1,4 @@
-package OOP.Interfaces.Lab.CarShop;
+package CarShop;
 
 public class Main {
     public static void main(String[] args) {
