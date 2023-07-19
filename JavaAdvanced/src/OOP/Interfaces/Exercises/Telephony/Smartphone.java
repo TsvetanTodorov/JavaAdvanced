@@ -44,7 +44,7 @@ public class Smartphone implements Callable, Browsable {
             if (hasOnlyDigits(number)) {
                 sb.append(String.format("Calling... %s\n", number));
             } else {
-                sb.append("Ivalid number!").append(System.lineSeparator());
+                sb.append("Invalid number!").append(System.lineSeparator());
             }
         }
         return sb.toString().trim();
